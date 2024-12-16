@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.nt'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '11'  // Adjust the Java version if needed
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+// https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-core
+    implementation group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.2.1'
+
+
+    // AWS Lambda Event Library dependency
+    implementation 'com.amazonaws:aws-lambda-java-events:3.11.0'
+
+    testImplementation 'org.mockito:mockito-core:5.0.0'
+    testImplementation 'org.mockito:mockito-inline:5.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
